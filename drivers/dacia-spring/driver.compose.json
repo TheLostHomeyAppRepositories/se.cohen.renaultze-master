@@ -14,7 +14,7 @@
   },
   "capabilities": [
     "onoff",
-    "measure_battery",
+    "measure_battery",  
     "measure_batteryTemperature",
     "measure_batteryAutonomy",
     "measure_totalMileage",
