@@ -2,7 +2,7 @@
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "se.cohen.renaultze",
   "version": "2.7.1",
-  "compatibility": ">=5.0.0",
+  "compatibility": ">=12.0.0",
   "sdk": 3,
   "brandColor": "#0d3b66",
   "platforms": [
@@ -348,7 +348,7 @@
       "name": {
         "en": "Dacia Spring"
       },
-      "class": "other",
+      "class": "car",
       "platforms": [
         "local"
       ],
@@ -429,13 +429,22 @@
       ]
     },
     {
+      "id": "renault-megane",
       "name": {
         "en": "Renault Megane"
       },
       "class": "car",
+      "platforms": [
+        "local"
+      ],
+      "images": {
+        "small": "/drivers/renault-megane/assets/images/small.png",
+        "large": "/drivers/renault-megane/assets/images/large.png",
+        "xlarge": "/drivers/renault-megane/assets/images/xlarge.png"
+      },
       "capabilities": [
-        "measure_battery",
         "onoff",
+        "measure_battery",
         "measure_batteryTemperature",
         "measure_batteryAutonomy",
         "measure_totalMileage",
@@ -447,30 +456,72 @@
         "measure_location_latitude",
         "measure_location_longitude"
       ],
-      "platforms": [
-        "local"
-      ],
-      "connectivity": [
-        "cloud"
-      ],
-      "images": {
-        "small": "/drivers/renault-megane/assets/images/small.png",
-        "large": "/drivers/renault-megane/assets/images/large.png",
-        "xlarge": "/drivers/renault-megane/assets/images/xlarge.png"
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Turn on heater",
+            "it": "Accendi climatizzatore",
+            "sv": "Slå på värmaren",
+            "fr": "Allumer le chauffage"
+          }
+        }
       },
       "energy": {
         "batteries": [
           "INTERNAL"
         ]
       },
-      "id": "renault-megane"
+      "connectivity": [
+        "cloud"
+      ],
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "title": {
+              "en": "Login to Dacia IDConnect",
+              "it": "Collegamento a Renault IDConnect"
+            },
+            "usernameLabel": {
+              "en": "E-mail address",
+              "it": "Indirizzo E-mail"
+            },
+            "usernamePlaceholder": {
+              "en": "john@doe.com",
+              "it": "marco@rossi.it"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "it": "Password"
+            },
+            "passwordPlaceholder": {
+              "en": "Password"
+            }
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": true
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ]
     },
     {
       "id": "renault-zoe",
       "name": {
         "en": "Renault Zoe"
       },
-      "class": "other",
+      "class": "car",
       "capabilities": [
         "onoff",
         "charge_mode",

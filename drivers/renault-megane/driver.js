@@ -81,7 +81,5 @@ module.exports = class RenaultMeganeDriver extends Homey.Driver {
     });
 
   }
-
-}
-
+  
 };

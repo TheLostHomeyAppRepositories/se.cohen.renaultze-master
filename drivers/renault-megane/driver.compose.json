@@ -40,7 +40,7 @@
     "batteries": [
       "INTERNAL"
     ]
-  }
+  },
   "platforms": [
     "local"
   ],
@@ -48,7 +48,7 @@
   "connectivity": [
     "cloud"
   ],
-  
+
   "pair": [
     {
       "id": "login_credentials",
