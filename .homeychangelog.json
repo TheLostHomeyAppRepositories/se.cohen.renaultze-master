@@ -110,5 +110,8 @@
   },
   "2.7.0": {
     "en": "Authentication fixed + Updated Renault API Keys"
+  },
+  "2.7.1": {
+    "en": "Paypal link updated"
   }
 }

@@ -189,11 +189,13 @@ module.exports = class RenaultZoeDevice extends Homey.Device {
   async fetchData() {
     this.log('-> enter fetchCarData');
     const settings = this.getSettings();
-    this.log(settings);
+    //this.log(settings);
     let renaultApi = new api.RenaultApi(settings);
+    this.log("---GET-DEVICES---")
+    this.log(renaultApi.getDevices());
     renaultApi.getBatteryStatus()
       .then(result => {
-        this.log(result);
+        //this.log(result);
         if (result.status == 'notSupported') {
           this.setCapabilityValue('measure_battery', 0);
           this.setCapabilityValue('measure_batteryTemperature', 0);
