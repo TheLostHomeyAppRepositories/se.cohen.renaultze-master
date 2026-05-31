@@ -3,7 +3,7 @@
   "name": {
     "en": "Dacia Spring"
   },
-  "class": "other",
+  "class": "car",
   "platforms": [
     "local"
   ],

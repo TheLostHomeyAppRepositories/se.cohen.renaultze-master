@@ -1,11 +1,20 @@
 {
+  "id": "renault-megane",
   "name": {
     "en": "Renault Megane"
   },
   "class": "car",
+  "platforms": [
+    "local"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
   "capabilities": [
-    "measure_battery",
     "onoff",
+    "measure_battery",
     "measure_batteryTemperature",
     "measure_batteryAutonomy",
     "measure_totalMileage",
@@ -17,20 +26,57 @@
     "measure_location_latitude",
     "measure_location_longitude"
   ],
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "cloud"
-  ],
-  "images": {
-    "small": "{{driverAssetsPath}}/images/small.png",
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+    "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Turn on heater",
+        "it": "Accendi climatizzatore",
+        "sv": "Slå på värmaren",
+        "fr": "Allumer le chauffage"
+      }
+    }
   },
   "energy": {
     "batteries": [
       "INTERNAL"
     ]
   }
+  "platforms": [
+    "local"
+  ],
+
+  "connectivity": [
+    "cloud"
+  ],
+  
+  "pair": [
+    {
+      "id": "login_credentials",
+      "template": "login_credentials",
+      "options": {
+        "title": {
+          "en": "Login to Dacia IDConnect",
+          "it": "Collegamento a Renault IDConnect"
+        },
+        "usernameLabel": { "en": "E-mail address", "it": "Indirizzo E-mail" },
+        "usernamePlaceholder": { "en": "john@doe.com", "it": "marco@rossi.it" },
+        "passwordLabel": { "en": "Password", "it": "Password" },
+        "passwordPlaceholder": { "en": "Password", "en": "Password" }
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      },
+      "options": {
+        "singular": true
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
 }

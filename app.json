@@ -429,6 +429,43 @@
       ]
     },
     {
+      "name": {
+        "en": "Renault Megane"
+      },
+      "class": "car",
+      "capabilities": [
+        "measure_battery",
+        "onoff",
+        "measure_batteryTemperature",
+        "measure_batteryAutonomy",
+        "measure_totalMileage",
+        "measure_plugStatus",
+        "measure_chargingStatus",
+        "measure_chargingRemainingTime",
+        "measure_isHome",
+        "measure_location",
+        "measure_location_latitude",
+        "measure_location_longitude"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/renault-megane/assets/images/small.png",
+        "large": "/drivers/renault-megane/assets/images/large.png",
+        "xlarge": "/drivers/renault-megane/assets/images/xlarge.png"
+      },
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "id": "renault-megane"
+    },
+    {
       "id": "renault-zoe",
       "name": {
         "en": "Renault Zoe"

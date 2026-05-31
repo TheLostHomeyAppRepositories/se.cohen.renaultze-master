@@ -3,7 +3,7 @@
   "name": {
     "en": "Renault Zoe"
   },
-  "class": "other",
+  "class": "car",
   "capabilities": [
     "onoff",
     "charge_mode",
