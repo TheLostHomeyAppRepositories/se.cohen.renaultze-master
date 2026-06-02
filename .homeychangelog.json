@@ -116,5 +116,8 @@
   },
   "2.7.2": {
     "en": "Renault Megane support"
+  },
+  "2.7.3": {
+    "en": "Updated package dependancies (security fixes)"
   }
 }
