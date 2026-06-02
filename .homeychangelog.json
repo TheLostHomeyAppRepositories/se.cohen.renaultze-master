@@ -119,5 +119,8 @@
   },
   "2.7.3": {
     "en": "Updated package dependancies (security fixes)"
+  },
+  "2.7.4": {
+    "en": "Fixed GPS Position and ChargeMode (not supported) on Megane E-Tech"
   }
 }
