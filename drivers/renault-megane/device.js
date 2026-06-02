@@ -66,8 +66,8 @@ module.exports = class RenaultMeganeDevice extends Homey.Device {
       const setLocation = renaultApi.calculateHome(HomeyLat, HomeyLng, lat, lng);
       await this.setCapabilityValue('measure_isHome', setLocation <= 1);
       await this.setCapabilityValue('measure_location', 'https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lng);
-//      await this.setCapabilityValue('measure_location_latitude', lat.toString());
- //     await this.setCapabilityValue('measure_location_longitude', lng.toString());
+//      await this.setCapabilityValue('measure_location_latitude', lat);
+ //     await this.setCapabilityValue('measure_location_longitude', lng);
       await this.setCapabilityValue('measure_location_latitude', String(lat));
       await this.setCapabilityValue('measure_location_longitude', String(lng));
     } catch (error) {
@@ -198,7 +198,7 @@ module.exports = class RenaultMeganeDevice extends Homey.Device {
     this.log(renaultApi.getDevices());
     renaultApi.getBatteryStatus()
       .then(result => {
-        //this.log(result);
+        
         if (result.status == 'notSupported') {
           this.setCapabilityValue('measure_battery', 0);
           this.setCapabilityValue('measure_batteryTemperature', 0);
@@ -224,18 +224,13 @@ module.exports = class RenaultMeganeDevice extends Homey.Device {
           if (result.data.data.attributes["chargingStatus"] === 1) {
             chargingStatus = true;
             chargingRemainingTime = result.data.data.attributes["chargingRemainingTime"] ?? 0;
-        /*    chargingInstantaneousPower = result.data.data.attributes["chargingInstantaneousPower"] ?? 0;
-            if (renaultApi.reportsChargingPowerInWatts()) {
-              chargingInstantaneousPower = chargingInstantaneousPower / 1000;
-            }  */
           }
           this.setCapabilityValue('measure_chargingStatus', chargingStatus);
           this.setCapabilityValue('measure_chargingRemainingTime', chargingRemainingTime);
-          // this.setCapabilityValue('measure_chargingInstantaneousPower', chargingInstantaneousPower);
         }
         renaultApi.getChargeMode()
           .then(result => {
-            this.log(result);
+            this.log(JSON.stringify(result, null, 2));
             if (result.status == 'ok') {
               if (result.data.data.attributes["chargeMode"] === 'scheduled') {
                 this.setCapabilityValue('charge_mode', 'schedule_mode')
@@ -261,7 +256,6 @@ module.exports = class RenaultMeganeDevice extends Homey.Device {
                     }
                     renaultApi.getLocation()
                       .then(result => {
-                        this.log(result);
                         if (result.status == 'ok') {
                           this.setLocation(result);
                         }
