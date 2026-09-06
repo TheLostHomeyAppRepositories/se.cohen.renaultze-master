@@ -122,5 +122,8 @@
   },
   "2.7.4": {
     "en": "Fixed GPS Position and ChargeMode (not supported) on Megane E-Tech"
+  },
+  "2.7.5": {
+    "en": "Fix Charge start on Dacia Spring"
   }
 }
