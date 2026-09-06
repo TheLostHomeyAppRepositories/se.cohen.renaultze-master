@@ -125,5 +125,8 @@
   },
   "2.7.5": {
     "en": "Fix Charge start on Dacia Spring"
+  },
+  "2.7.6": {
+    "en": "Charge Start fix"
   }
 }
